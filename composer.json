@@ -1,50 +1,9 @@
 {
     "name": "topoff/user-agent-parser",
     
-    "description": "UserAgent parsing done right http://useragent.mkf.solutions/",
+    "description": "UserAgent parsing done right",
     "keywords": [
-        "UA",
-        "UA parser",
-        "UAparser",
-        "User agent",
         "User agent parser",
-        "User agent detection",
-        "UserAgent", 
-        "UserAgentParser",
-        
-        "Sniffing",
-        "Parser", 
-        "Detection",
-        
-        "Browser",
-        "Engine",
-        "Rendering engine",
-        "OS",
-        "Operating system",
-        "Device",
-        "device detection",
-        "mobile detection",
-        "mobile detector",
-        "mobile device detection",
-        "bot detection", 
-        
-        "get_browser",
-        "browscap",
-        "donatj",
-        "jenssegers",
-        "piwik",
-        "sinergi",
-        "ua-parser",
-        "whichbrowser",
-        "woothee",
-        "wurfl",
-        
-        "DeviceAtlas",
-        "NeutrinoApiCom",
-        "UdgerCom",
-        "UserAgentApiCom",
-        "UserAgentStringCom",
-        "WhatIsMyBrowserCom"
     ],
     
     "license": "MIT",
@@ -52,7 +11,11 @@
         {
             "name": "ThaDafinser",
             "email": "martin.keckeis1@gmail.com"
-        }
+        },
+        {
+            "name": "Andreas Berger",
+            "email": "spam@bergerweb.ch"
+        },        
     ],
     
     "autoload": {
