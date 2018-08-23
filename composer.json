@@ -1,11 +1,7 @@
 {
     "name": "topoff/user-agent-parser",
-    
     "description": "UserAgent parsing done right",
-    "keywords": [
-        "User agent parser",
-    ],
-    
+    "keywords": ["User agent parser"],
     "license": "MIT",
     "authors": [
         {
@@ -13,9 +9,9 @@
             "email": "martin.keckeis1@gmail.com"
         },
         {
-            "name": "Andreas Berger",
+            "name": "ndberg",
             "email": "spam@bergerweb.ch"
-        },        
+        }
     ],
     
     "autoload": {
