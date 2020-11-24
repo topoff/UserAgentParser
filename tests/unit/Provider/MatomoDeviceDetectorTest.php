@@ -2,7 +2,7 @@
 namespace UserAgentParserTest\Unit\Provider;
 
 use DeviceDetector\DeviceDetector;
-use UserAgentParser\Provider\PiwikDeviceDetector;
+use UserAgentParser\Provider\MatomoDeviceDetector;
 
 /**
  *
@@ -10,9 +10,9 @@ use UserAgentParser\Provider\PiwikDeviceDetector;
  * @author Martin Keckeis <martin.keckeis1@gmail.com>
  * @license MIT
  *
- * @covers UserAgentParser\Provider\PiwikDeviceDetector
+ * @covers UserAgentParser\Provider\MatomoDeviceDetector
  */
-class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements RequiredProviderTestInterface
+class MatomoDeviceDetectorTest extends AbstractProviderTestCase implements RequiredProviderTestInterface
 {
     /**
      *
@@ -27,42 +27,42 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
 
     public function testGetName()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
-        $this->assertEquals('PiwikDeviceDetector', $provider->getName());
+        $this->assertEquals('MatomoDeviceDetector', $provider->getName());
     }
 
     public function testGetHomepage()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
-        $this->assertEquals('https://github.com/piwik/device-detector', $provider->getHomepage());
+        $this->assertEquals('https://github.com/matomo-org/device-detector', $provider->getHomepage());
     }
 
     public function testGetPackageName()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
-        $this->assertEquals('piwik/device-detector', $provider->getPackageName());
+        $this->assertEquals('matomo/device-detector', $provider->getPackageName());
     }
 
     public function testVersion()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
         $this->assertInternalType('string', $provider->getVersion());
     }
 
     public function testUpdateDate()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
         $this->assertInstanceOf('DateTime', $provider->getUpdateDate());
     }
 
     public function testDetectionCapabilities()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
         $this->assertEquals([
 
@@ -99,7 +99,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
 
     public function testIsRealResult()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
         /*
          * general
@@ -122,12 +122,12 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
 
     public function testParser()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
         $this->assertInstanceOf('DeviceDetector\DeviceDetector', $provider->getParser());
 
         $parser = $this->getParser();
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $this->assertSame($parser, $provider->getParser());
     }
@@ -139,7 +139,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
     {
         $parser = $this->getParser();
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $result = $provider->parse('A real user agent...');
     }
@@ -156,7 +156,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
             'name' => 'UNK',
         ]));
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $result = $provider->parse('A real user agent...');
     }
@@ -177,11 +177,11 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
             'category' => 'something',
         ]));
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $result = $provider->parse('A real user agent...');
 
-        $this->assertEquals('PiwikDeviceDetector', $result->getProviderName());
+        $this->assertEquals('MatomoDeviceDetector', $result->getProviderName());
         $this->assertRegExp('/\d{1,}\.\d{1,}/', $result->getProviderVersion());
     }
 
@@ -201,7 +201,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
             'category' => 'something',
         ]));
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $result = $provider->parse('A real user agent...');
 
@@ -231,7 +231,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
             'name' => 'Bot',
         ]));
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $result = $provider->parse('A real user agent...');
 
@@ -261,7 +261,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
             'name' => 'Generic Bot',
         ]));
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $result = $provider->parse('A real user agent...');
 
@@ -293,7 +293,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
             ->method('getOs')
             ->will($this->returnValue([]));
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $result = $provider->parse('A real user agent...');
 
@@ -346,7 +346,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
             'version' => '7.0',
         ]));
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $result = $provider->parse('A real user agent...');
 
@@ -403,7 +403,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase implements Requir
             ->method('isTouchEnabled')
             ->will($this->returnValue(true));
 
-        $provider = new PiwikDeviceDetector($parser);
+        $provider = new MatomoDeviceDetector($parser);
 
         $result = $provider->parse('A real user agent...');
 

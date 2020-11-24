@@ -7,7 +7,7 @@ use UserAgentParser\Exception\PackageNotLoadedException;
 use UserAgentParser\Model;
 
 /**
- * Abstraction for piwik/device-detector
+ * Abstraction for matomo/device-detector
  *
  * @author Martin Keckeis <martin.keckeis1@gmail.com>
  * @license MIT

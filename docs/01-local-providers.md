@@ -5,7 +5,7 @@ A detailed description of all local providers
 
 - [BrowscapPhp](#browscapphp)
 - [DonatjUAParser](#donatjuaparser)
-- [PiwikDeviceDetector](#piwikdevicedetector)
+- [MatomoDeviceDetector](#matomodevicedetector)
 - [SinergiBrowserDetector](#sinergibrowserdetector)
 - [UAParser](#uaparser)
 - [WhichBrowser](#whichbrowser)
@@ -106,13 +106,13 @@ $result = $provider->parse($userAgent, $headers);
 ```
 
 
-## PiwikDeviceDetector
+## MatomoDeviceDetector
 
 
 ### Install
 
 ```
-composer require piwik/device-detector
+composer require matomo/device-detector
 ```
 
 ### Use it (without cache)
@@ -120,7 +120,7 @@ composer require piwik/device-detector
 ```php
 use UserAgentParser\Provider;
 
-$provider = new Provider\PiwikDeviceDetector();
+$provider = new Provider\MatomoDeviceDetector();
 
 $result = $provider->parse($userAgent, $headers);
 ```
@@ -131,10 +131,10 @@ $result = $provider->parse($userAgent, $headers);
 use Doctrine\Common\Cache;
 use UserAgentParser\Provider;
 
-$piwikParser = new \DeviceDetector\DeviceDetector();
-$piwikParser->setCache($new Cache\PhpFileCache('.tmp/piwik'));
+$matomoParser = new \DeviceDetector\DeviceDetector();
+$matomoParser->setCache($new Cache\PhpFileCache('.tmp/piwik'));
 
-$provider = new Provider\PiwikDeviceDetector($piwikParser);
+$provider = new Provider\MatomoDeviceDetector($matomoParser);
 
 $result = $provider->parse($userAgent, $headers);
 ```

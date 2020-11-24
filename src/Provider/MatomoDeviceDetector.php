@@ -1,40 +1,39 @@
 <?php
 namespace UserAgentParser\Provider;
 
-use DeviceDetector\DeviceDetector;
 use UserAgentParser\Exception\NoResultFoundException;
 use UserAgentParser\Exception\PackageNotLoadedException;
 use UserAgentParser\Model;
 
 /**
- * Abstraction for piwik/device-detector
+ * Abstraction for matomo/device-detector
  *
  * @author Martin Keckeis <martin.keckeis1@gmail.com>
  * @license MIT
- * @see https://github.com/piwik/device-detector
+ * @see https://github.com/matomo-org/device-detector
  */
-class PiwikDeviceDetector extends AbstractProvider
+class MatomoDeviceDetector extends AbstractProvider
 {
     /**
      * Name of the provider
      *
      * @var string
      */
-    protected $name = 'PiwikDeviceDetector';
+    protected $name = 'MatomoDeviceDetector';
 
     /**
      * Homepage of the provider
      *
      * @var string
      */
-    protected $homepage = 'https://github.com/piwik/device-detector';
+    protected $homepage = 'https://github.com/matomo-org/device-detector';
 
     /**
      * Composer package name
      *
      * @var string
      */
-    protected $packageName = 'piwik/device-detector';
+    protected $packageName = 'matomo/device-detector';
 
     protected $detectionCapabilities = [
 

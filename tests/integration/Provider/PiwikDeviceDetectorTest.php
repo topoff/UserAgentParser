@@ -1,7 +1,7 @@
 <?php
 namespace UserAgentParserTest\Integration\Provider;
 
-use UserAgentParser\Provider\PiwikDeviceDetector;
+use UserAgentParser\Provider\MatomoDeviceDetector;
 
 /**
  *
@@ -11,11 +11,11 @@ use UserAgentParser\Provider\PiwikDeviceDetector;
  *
  * @coversNothing
  */
-class PiwikDeviceDetectorTest extends AbstractProviderTestCase
+class MatomoDeviceDetectorTest extends AbstractProviderTestCase
 {
     public function testMethods()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
         $parser   = $provider->getParser();
 
         /*
@@ -44,14 +44,14 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase
      */
     public function testNoResultFound()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
         $result = $provider->parse('...');
     }
 
     public function testRealResultBot()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
         $result = $provider->parse('Googlebot/2.1 (+http://www.googlebot.com/bot.html)');
         $this->assertEquals([
@@ -167,7 +167,7 @@ class PiwikDeviceDetectorTest extends AbstractProviderTestCase
 
     public function testRealResultDevice()
     {
-        $provider = new PiwikDeviceDetector();
+        $provider = new MatomoDeviceDetector();
 
         $result = $provider->parse('Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3');
         $this->assertEquals([

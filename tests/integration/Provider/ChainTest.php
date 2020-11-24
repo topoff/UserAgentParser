@@ -2,7 +2,7 @@
 namespace UserAgentParserTest\Integration\Provider;
 
 use UserAgentParser\Provider\Chain;
-use UserAgentParser\Provider\PiwikDeviceDetector;
+use UserAgentParser\Provider\MatomoDeviceDetector;
 use UserAgentParser\Provider\WhichBrowser;
 use UserAgentParser\Provider\Zsxsoft;
 
@@ -36,7 +36,7 @@ class ChainTest extends AbstractProviderTestCase
         $provider = new Chain([
             new WhichBrowser(),
             new Zsxsoft(),
-            new PiwikDeviceDetector(),
+            new MatomoDeviceDetector(),
         ]);
 
         $provider->parse('...');
@@ -61,7 +61,7 @@ class ChainTest extends AbstractProviderTestCase
     {
         $provider = new Chain([
             new Zsxsoft(),
-            new PiwikDeviceDetector(),
+            new MatomoDeviceDetector(),
         ]);
 
         $result = $provider->parse('Googlebot/2.1 (+http://www.google.com/bot.html)');
@@ -78,7 +78,7 @@ class ChainTest extends AbstractProviderTestCase
     {
         $provider = new Chain([
             new Zsxsoft(),
-            new PiwikDeviceDetector(),
+            new MatomoDeviceDetector(),
             new WhichBrowser(),
         ]);
 

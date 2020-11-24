@@ -127,7 +127,7 @@ See detailed documenation here
 | Endorphin              | local | x |   | x |   |   | x |   | x | x | x |   |
 | HandsetDetection       | local | x |   | x | x | x |   |   |   |   |   |   |
 | JenssegersAgent        | local | x |   | x |   |   |   | x | x | x |   | Based on MobileDetect |
-| PiwikDeviceDetector    | local | x | x | x | x | x | x | x | x | x | x |   |
+| MatomoDeviceDetector    | local | x | x | x | x | x | x | x | x | x | x |   |
 | SinergiBrowserDetector | local | x |   | x | x |   |   | x | x |   |   |   |
 | UAParser               | local | x |   | x | x | x |   |   | x | x |   |   |
 | WhichBrowser           | local | x |   | x | x | x | x | x | x | x |   |   |
@@ -152,7 +152,7 @@ But you need to update them yourself from time to time, to make sure you detect 
 - Endorphin
 - HandsetDetection
 - JenssegersAgent
-- PiwikDeviceDetector
+- MatomoDeviceDetector
 - SinergiBrowserDetector
 - UAParser
 - WhichBrowser
@@ -191,7 +191,7 @@ use UserAgentParser\Provider;
 
 $userAgent = 'Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_5 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
 
-$provider = new Provider\PiwikDeviceDetector();
+$provider = new Provider\MatomoDeviceDetector();
 
 /* @var $result \UserAgentParser\Model\UserAgent */
 $result = $provider->parse($userAgent);
@@ -221,7 +221,7 @@ use UserAgentParser\Provider;
 $userAgent = 'Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_5 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8J2 Safari/6533.18.5';
 
 $chain = new Provider\Chain([
-    new Provider\PiwikDeviceDetector(),
+    new Provider\MatomoDeviceDetector(),
     new Provider\WhichBrowser(),
     new Provider\UAParser(),
     new Provider\Woothee(),

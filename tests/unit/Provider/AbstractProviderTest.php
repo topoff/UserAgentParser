@@ -77,7 +77,7 @@ class AbstractProviderTest extends AbstractProviderTestCase
         $reflection = new \ReflectionClass($provider);
         $property   = $reflection->getProperty('packageName');
         $property->setAccessible(true);
-        $property->setValue($provider, 'piwik/device-detector');
+        $property->setValue($provider, 'matomo/device-detector');
 
         // match
         $this->assertInternalType('string', $provider->getVersion());
@@ -108,7 +108,7 @@ class AbstractProviderTest extends AbstractProviderTestCase
         $reflection = new \ReflectionClass($provider);
         $property   = $reflection->getProperty('packageName');
         $property->setAccessible(true);
-        $property->setValue($provider, 'piwik/device-detector');
+        $property->setValue($provider, 'matomo/device-detector');
 
         // match
         $this->assertInstanceOf('DateTime', $provider->getUpdateDate());
