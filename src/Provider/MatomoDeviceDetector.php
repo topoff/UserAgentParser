@@ -4,6 +4,7 @@ namespace UserAgentParser\Provider;
 use UserAgentParser\Exception\NoResultFoundException;
 use UserAgentParser\Exception\PackageNotLoadedException;
 use UserAgentParser\Model;
+use DeviceDetector\DeviceDetector;
 
 /**
  * Abstraction for matomo/device-detector
